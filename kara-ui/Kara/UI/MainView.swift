@@ -1,16 +1,34 @@
+//
+//  MainView.swift
+//  Kara
+//
+
 import SwiftUI
 
 struct MainView: View {
+
     var body: some View {
+
         ZStack {
-            Color.clear
+
+            // Dark background so the glass effect is visible
+            Color.karaBackground
                 .ignoresSafeArea()
+
+            // Glass Window
+            GlassBackground()
+                .padding(12)
+
         }
-        .frame(width: WindowConfiguration.defaultSize.width,
-               height: WindowConfiguration.defaultSize.height)
+        .frame(
+            width: WindowTheme.defaultSize.width,
+            height: WindowTheme.defaultSize.height
+        )
     }
 }
 
 #Preview {
+
     MainView()
+
 }
